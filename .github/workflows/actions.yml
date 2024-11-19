@@ -27,7 +27,7 @@ jobs:
           docker images
           cd ..
       - name: Deploy the image to minikube
-        run:
+        run: |
           kubectl apply -f rental-deployment.yml
           kubectl apply -f rental-loadbalancing-service.yml
       - name: Get Kubernetes service URL
