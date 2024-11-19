@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: rentalservice
+    version: "1.0"
+  name: rentalservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rentalservice
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: rentalservice
+    spec:
+      containers:
+        - name: rentalservice
+          image: "rentalservice"
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+          resources: {}
+status: {}
